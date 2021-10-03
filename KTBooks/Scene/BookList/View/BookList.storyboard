@@ -44,6 +44,9 @@
                                                         <constraint firstAttribute="width" constant="28" id="uY6-ab-7Ec"/>
                                                     </constraints>
                                                     <state key="normal" image="ICON-favorite"/>
+                                                    <connections>
+                                                        <action selector="tappedFavoriteButton:" destination="1Jn-3Z-W0d" eventType="touchUpInside" id="hAh-R8-U1i"/>
+                                                    </connections>
                                                 </button>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ufN-8z-LHx">
                                                     <rect key="frame" x="0.0" y="308" width="202" height="40"/>

@@ -9,6 +9,12 @@ import UIKit
 
 /// BookListItemCell
 final class BookListItemCell: UICollectionViewCell {
+    var viewModel: BookListItemViewModelProtocol! {
+        didSet {
+            bookLabel.text = viewModel.name
+            bookImageView.load(url: viewModel.artwork)
+        }
+    }
     // MARK: - Public Properties.
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var bookLabel: UILabel!
@@ -19,9 +25,14 @@ final class BookListItemCell: UICollectionViewCell {
     }
     /// Injection ViewModel
     func configure(viewModel: BookListItemViewModelProtocol) {
-        bookLabel.text = viewModel.name
-        bookImageView.load(url: viewModel.artwork)
-        guard let favoriteImageName = viewModel.getFavoriteImageName(), let favoriteImage = UIImage(named: favoriteImageName) else { return }
-        bookFavoriteButton.setImage(favoriteImage, for: .normal)
+        self.viewModel = viewModel
+        if let imageName = viewModel.imageName {
+            bookFavoriteButton.setImage(UIImage(named: imageName), for: .normal)
+        }
+    }
+    @IBAction func tappedFavoriteButton(_ sender: Any) {
+        let isFavorited = viewModel.isFavoritedBook()
+        viewModel.updateFavoriteBook(isFavorited: !isFavorited)
+        bookFavoriteButton.setImage(UIImage(named: viewModel.imageName!), for: .normal)
     }
 }

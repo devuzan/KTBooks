@@ -24,26 +24,24 @@ final class BookListItemViewModel: BookListItemViewModelProtocol {
     var artistName: String? {
         model.artistName
     }
+    var imageName: String? {
+        isFavoritedBook() ? "ICON-favorited" : "ICON-favorite"
+    }
     // MARK: - Private Properties.
     private let model: BookListItemServiceResponse
     // MARK: - Initializer Methods.
     init(response: BookListItemServiceResponse) {
         self.model = response
     }
-    func isFavorited() -> Bool {
-        ((UserDefaults.standard[.array]?.contains(where: { r in
-            return r.id == id
-        })) != nil)
-    }
-    func addedFavorite() -> Bool {
+    func updateFavoriteBook(isFavorited: Bool) {
         if let id = id {
-            UserDefaults.standard[.array]?.append(BookListItemServiceResponse(id: id))
-            return true
+            UserDefaults.updateFavoriteBookStatus(status: isFavorited, id: id)
+        }
+    }
+    func isFavoritedBook() -> Bool {
+        if let id = id {
+            return UserDefaults.isFavoritedBook(id: id)
         }
         return false
     }
-    func getFavoriteImageName() -> String? {
-        isFavorited() ? "ICON-favorited" : "ICON-favorite"
-    }
-
 }

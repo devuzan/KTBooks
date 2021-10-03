@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mw2-Qt-7oN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mw2-Qt-7oN">
                                 <rect key="frame" x="0.0" y="139" width="414" height="723"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchBookListTableViewCell" rowHeight="121" id="pOz-7r-WFX" customClass="SearchBookListTableViewCell" customModule="KTBooks" customModuleProvider="target">
@@ -82,9 +81,8 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="t91-iU-bSa"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-5z-ebT">
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-5z-ebT">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="EUF-An-ltB"/>
@@ -93,6 +91,15 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Mw2-Qt-7oN" firstAttribute="leading" secondItem="oTa-5z-ebT" secondAttribute="leading" id="9Ez-2D-F6w"/>
+                            <constraint firstItem="Mw2-Qt-7oN" firstAttribute="top" secondItem="oTa-5z-ebT" secondAttribute="bottom" id="RGS-zu-qMP"/>
+                            <constraint firstItem="oTa-5z-ebT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="T1G-OP-94K"/>
+                            <constraint firstItem="oTa-5z-ebT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Ulz-Mm-hfd"/>
+                            <constraint firstItem="Mw2-Qt-7oN" firstAttribute="trailing" secondItem="oTa-5z-ebT" secondAttribute="trailing" id="mCA-Ia-nxw"/>
+                            <constraint firstItem="oTa-5z-ebT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="sdo-6Y-wr4"/>
+                            <constraint firstItem="Mw2-Qt-7oN" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="xKN-8L-9wO"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2tz-wf-8hL"/>
                     <connections>
