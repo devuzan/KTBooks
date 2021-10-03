@@ -29,11 +29,15 @@ final class BookListServiceResponse: Decodable {
 }
 
 /// BookListItemServiceResponse
-final class BookListItemServiceResponse: Decodable {
+final class BookListItemServiceResponse: Codable {
     // MARK: - Public Properties.
-    let id: String?
-    let artworkUrl100: URL?
-    let artistName: String?
-    let name: String?
-    let releaseDate: String?
+    var id: String?
+    var artworkUrl100: URL? = nil
+    var artistName: String? = nil
+    var name: String? = nil
+    var releaseDate: String? = nil
+    convenience init(id: String) {
+        self.init()
+        self.id = id
+    }
 }

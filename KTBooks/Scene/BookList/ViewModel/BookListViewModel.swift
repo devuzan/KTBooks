@@ -39,4 +39,38 @@ final class BookListViewModel: BookListViewModelProtocol {
     func itemViewModel(at indexPath: IndexPath) -> BookListItemViewModelProtocol? {
         viewModels?[indexPath.item]
     }
+    
+}
+
+
+import Foundation
+
+extension UserDefaults {
+    struct Key<Value> {
+        let name: String
+        init(_ name: String) {
+            self.name = name
+        }
+    }
+    subscript<V: Codable>(key: Key<V>) -> V? {
+        get {
+            guard let data = self.data(forKey: key.name) else {
+                return nil
+            }
+            return try? JSONDecoder().decode(V.self, from: data)
+        }
+        set {
+            guard let value = newValue, let data = try? JSONEncoder().encode(value) else {
+                self.set(nil, forKey: key.name)
+                return
+            }
+            self.set(data, forKey: key.name)
+        }
+    }
+}
+
+
+extension UserDefaults.Key {
+    typealias Key = UserDefaults.Key
+    static var array: Key<[BookListItemServiceResponse]> { return Key<[BookListItemServiceResponse]>("array") }
 }

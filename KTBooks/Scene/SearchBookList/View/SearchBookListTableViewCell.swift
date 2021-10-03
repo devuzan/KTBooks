@@ -20,5 +20,7 @@ final class SearchBookListTableViewCell: UITableViewCell {
     /// Injection ViewModel
     func configure(viewModel: BookListItemViewModelProtocol) {
         bookTitleLabel.text = viewModel.name
+        bookImageView.load(url: viewModel.artwork)
+        bookReleaseLabel.text = viewModel.releaseDate
     }
 }

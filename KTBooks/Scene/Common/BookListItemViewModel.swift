@@ -28,4 +28,20 @@ final class BookListItemViewModel: BookListItemViewModelProtocol {
     init(response: BookListItemServiceResponse) {
         self.model = response
     }
+    func isFavorited() -> Bool {
+        ((UserDefaults.standard[.array]?.contains(where: { r in
+            return r.id == id
+        })) != nil)
+    }
+    func addedFavorite() -> Bool {
+        if let id = id {
+            UserDefaults.standard[.array]?.append(BookListItemServiceResponse(id: id))
+            return true
+        }
+        return false
+    }
+    func getFavoriteImageName() -> String? {
+        isFavorited() ? "ICON-favorited" : "ICON-favorite"
+    }
+
 }

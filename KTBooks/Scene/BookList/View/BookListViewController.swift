@@ -15,6 +15,7 @@ final class BookListViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewSetup()
         viewModel.getBookList { error in
             guard let error = error else {
                 self.collectionView.reloadOnMainThread()
@@ -27,7 +28,30 @@ final class BookListViewController: UIViewController {
         let viewController = BookDetailViewController.build(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
     }
+    private func viewSetup() {
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .vertical
+        layout.minimumLineSpacing = AppConstants.Padding.small
+        layout.minimumInteritemSpacing = AppConstants.Padding.mini
+        collectionView.setCollectionViewLayout(layout, animated: true   )
+    }
 }
+
+extension BookListViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView,
+                  layout collectionViewLayout: UICollectionViewLayout,
+                  insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 1.0, left: AppConstants.Padding.small, bottom: 1.0, right: AppConstants.Padding.small)
+    }
+    func collectionView(_ collectionView: UICollectionView,
+                   layout collectionViewLayout: UICollectionViewLayout,
+                   sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let layout = collectionViewLayout as! UICollectionViewFlowLayout
+        let itemWidth = collectionView.frame.width / 2 - layout.minimumInteritemSpacing
+        return CGSize(width: itemWidth - AppConstants.Padding.small, height: CGFloat(Int((itemWidth * Constants.itemWidthRatio))) + AppConstants.Padding.small + Constants.labelContainerViewHeight)
+    }
+}
+
 
 // MARK: - UICollectionViewDataSource
 extension BookListViewController: UICollectionViewDataSource {
@@ -52,6 +76,14 @@ extension BookListViewController: UICollectionViewDelegate {
         if let itemViewModel = viewModel.itemViewModel(at: indexPath) {
             showBookDetail(with: itemViewModel)
         }
+    }
+}
+
+// MARK: - Constants
+extension BookListViewController {
+    struct Constants {
+        static let labelContainerViewHeight: CGFloat = 40
+        static let itemWidthRatio: CGFloat = 1.5
     }
 }
 

@@ -31,6 +31,11 @@ enum AppConstants {
         static let searchBookList = "SearchBookList"
         static let favoriteBookList = "FavoriteBookList"
     }
+    enum Padding {
+        static let mini: CGFloat = 4.0
+        static let small: CGFloat = 8.0
+        static let medium: CGFloat = 16.0
+    }
 }
 
 

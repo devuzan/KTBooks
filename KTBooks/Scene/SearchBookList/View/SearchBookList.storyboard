@@ -16,43 +16,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mw2-Qt-7oN">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Mw2-Qt-7oN">
                                 <rect key="frame" x="0.0" y="139" width="414" height="723"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchBookListTableViewCell" rowHeight="125" id="pOz-7r-WFX" customClass="SearchBookListTableViewCell" customModule="KTBooks" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="125"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchBookListTableViewCell" rowHeight="120" id="pOz-7r-WFX" customClass="SearchBookListTableViewCell" customModule="KTBooks" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pOz-7r-WFX" id="Xnx-8z-gOX">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="125"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cWn-Cm-k0Q">
-                                                    <rect key="frame" x="20" y="11" width="89" height="107"/>
+                                                    <rect key="frame" x="20" y="10" width="80" height="100"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="89" id="hAY-Xx-B97"/>
-                                                        <constraint firstAttribute="height" constant="107" id="k9J-st-oX9"/>
+                                                        <constraint firstAttribute="height" constant="100" id="62p-Wz-YfO"/>
+                                                        <constraint firstAttribute="width" constant="80" id="Y3c-W1-1nP"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5H-RM-BtU">
-                                                    <rect key="frame" x="117" y="26" width="277" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5H-RM-BtU">
+                                                    <rect key="frame" x="108" y="11" width="278" height="23"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle2"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ0-7U-Zxu">
-                                                    <rect key="frame" x="117" y="65" width="277" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pJ0-7U-Zxu">
+                                                    <rect key="frame" x="108" y="54" width="314" height="14.5"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleSubhead"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="cWn-Cm-k0Q" firstAttribute="leading" secondItem="Xnx-8z-gOX" secondAttribute="leading" constant="20" symbolic="YES" id="6us-B0-yuD"/>
-                                                <constraint firstItem="cWn-Cm-k0Q" firstAttribute="top" secondItem="Xnx-8z-gOX" secondAttribute="top" constant="11" id="ZoY-zx-raW"/>
-                                                <constraint firstAttribute="bottom" secondItem="cWn-Cm-k0Q" secondAttribute="bottom" constant="7" id="nQG-0N-TVz"/>
+                                                <constraint firstAttribute="bottom" secondItem="cWn-Cm-k0Q" secondAttribute="bottom" constant="10" id="4SQ-HK-Wqe"/>
+                                                <constraint firstItem="k5H-RM-BtU" firstAttribute="leading" secondItem="cWn-Cm-k0Q" secondAttribute="trailing" constant="8" id="D1L-3S-ifd"/>
+                                                <constraint firstItem="pJ0-7U-Zxu" firstAttribute="leading" secondItem="cWn-Cm-k0Q" secondAttribute="trailing" constant="8" id="Kj2-4O-oBl"/>
+                                                <constraint firstItem="cWn-Cm-k0Q" firstAttribute="leading" secondItem="Xnx-8z-gOX" secondAttribute="leading" constant="20" symbolic="YES" id="LB9-sE-zDq"/>
+                                                <constraint firstAttribute="trailing" secondItem="pJ0-7U-Zxu" secondAttribute="trailing" constant="-8" id="P5U-yU-cL6"/>
+                                                <constraint firstItem="cWn-Cm-k0Q" firstAttribute="top" secondItem="Xnx-8z-gOX" secondAttribute="top" constant="10" id="Wxa-8O-P59"/>
+                                                <constraint firstItem="k5H-RM-BtU" firstAttribute="top" secondItem="Xnx-8z-gOX" secondAttribute="topMargin" id="ZGw-gt-DAk"/>
+                                                <constraint firstItem="pJ0-7U-Zxu" firstAttribute="top" secondItem="k5H-RM-BtU" secondAttribute="bottom" constant="20" id="gji-78-gxk"/>
+                                                <constraint firstItem="k5H-RM-BtU" firstAttribute="trailing" secondItem="Xnx-8z-gOX" secondAttribute="trailingMargin" constant="-8" id="oJM-8f-Ckf"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -67,8 +72,9 @@
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="t91-iU-bSa"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-5z-ebT">
+                            <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oTa-5z-ebT">
                                 <rect key="frame" x="0.0" y="88" width="414" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <outlet property="delegate" destination="Y6W-OH-hqX" id="EUF-An-ltB"/>
@@ -77,15 +83,6 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Mw2-Qt-7oN" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="5An-x8-YdS"/>
-                            <constraint firstItem="oTa-5z-ebT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="IMs-d1-IOs"/>
-                            <constraint firstItem="oTa-5z-ebT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="Jsd-5D-Z3U"/>
-                            <constraint firstItem="Mw2-Qt-7oN" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="JtQ-u0-oFL"/>
-                            <constraint firstItem="oTa-5z-ebT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="oFN-60-MNf"/>
-                            <constraint firstItem="Mw2-Qt-7oN" firstAttribute="top" secondItem="oTa-5z-ebT" secondAttribute="bottom" id="q8c-x6-jsK"/>
-                            <constraint firstItem="Mw2-Qt-7oN" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" id="tAG-6n-RLa"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2tz-wf-8hL"/>
                     <connections>
