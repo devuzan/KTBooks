@@ -10,14 +10,17 @@ import UIKit
 /// BookListViewController
 final class BookListViewController: UIViewController {
     // MARK: - Private Properties.
+    private var viewModel: BookListViewModelProtocol!
     @IBOutlet weak var filter: UIBarButtonItem!
     @IBOutlet weak var search: UIBarButtonItem!
-    private var viewModel: BookListViewModelProtocol!
-    // MARK: - Public Properties.
     @IBOutlet weak var collectionView: UICollectionView!
+    // MARK: - Public Properties.
     override func viewDidLoad() {
         super.viewDidLoad()
         viewSetup()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         viewModel.getBookList { error in
             guard let error = error else {
                 self.collectionView.reloadOnMainThread()
@@ -26,6 +29,7 @@ final class BookListViewController: UIViewController {
             self.showAlert(title: AppConstants.Text.errorTitle, message: error.localizedDescription, okActionHandler: nil)
         }
     }
+    // MARK: - Helpers
     private func showBookDetail(with viewModel: BookListItemViewModelProtocol) {
         let viewController = BookDetailViewController.build(viewModel: viewModel)
         navigationController?.pushViewController(viewController, animated: true)
@@ -37,6 +41,7 @@ final class BookListViewController: UIViewController {
         layout.minimumInteritemSpacing = AppConstants.Padding.mini
         collectionView.setCollectionViewLayout(layout, animated: true)
     }
+    // MARK: - Action Methods.
     @IBAction func tappedFilterButton(_ sender: UIBarButtonItem) {
         presentAlert(types: BookListSortingType.allCases) { [weak self] action in
             guard
@@ -55,6 +60,7 @@ final class BookListViewController: UIViewController {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
 extension BookListViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView,
                   layout collectionViewLayout: UICollectionViewLayout,
@@ -69,7 +75,6 @@ extension BookListViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: itemWidth - AppConstants.Padding.small, height: CGFloat(Int((itemWidth * Constants.itemWidthRatio))) + AppConstants.Padding.small + Constants.labelContainerViewHeight)
     }
 }
-
 
 // MARK: - UICollectionViewDataSource
 extension BookListViewController: UICollectionViewDataSource {
@@ -109,7 +114,7 @@ extension BookListViewController {
 extension BookListViewController {
     static func build() -> BookListViewController {
         let sb = UIStoryboard(name: AppConstants.StoryboardName.bookList, bundle: nil)
-        let viewController = sb.instantiateViewController(identifier: "BookListViewController") as! BookListViewController
+        let viewController = sb.instantiateViewController(identifier: AppConstants.ViewControllerIdentifier.bookListViewController) as! BookListViewController
         let service = BookListService()
         let viewModel = BookListViewModel(service: service)
         viewController.viewModel = viewModel

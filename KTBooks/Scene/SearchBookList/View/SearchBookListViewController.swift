@@ -65,12 +65,11 @@ extension SearchBookListViewController: UITableViewDelegate {
     }
 }
 
-
 // MARK: - Build
 extension SearchBookListViewController {
     static func build() -> SearchBookListViewController {
-        let sb = UIStoryboard(name: "SearchBookList", bundle: nil)
-        let viewController = sb.instantiateViewController(identifier: "SearchBookListViewController") as! SearchBookListViewController
+        let sb = UIStoryboard(name: AppConstants.StoryboardName.searchBookList, bundle: nil)
+        let viewController = sb.instantiateViewController(identifier: AppConstants.ViewControllerIdentifier.searchBookListController) as! SearchBookListViewController
         let service = BookListService()
         let viewModel = SearchBookListViewModel(service: service)
         viewController.viewModel = viewModel

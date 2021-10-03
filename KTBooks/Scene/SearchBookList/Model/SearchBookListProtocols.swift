@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// SearchBookListViewModelProtocol
 protocol SearchBookListViewModelProtocol {
     func numberOfSections() -> Int
     func numberOfRowsInSecion(in section: Int) -> Int

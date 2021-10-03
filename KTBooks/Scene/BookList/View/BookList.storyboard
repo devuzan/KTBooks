@@ -106,12 +106,12 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3sx-sW-e5g">
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="LD7-W3-011">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="ICON-sort" style="done" id="LD7-W3-011">
                             <connections>
                                 <action selector="tappedFilterButton:" destination="Y6W-OH-hqX" id="gYy-Rd-1Iu"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="zqO-aq-Lcf">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="ICON-search" id="zqO-aq-Lcf">
                             <connections>
                                 <action selector="tappedSearchButton:" destination="Y6W-OH-hqX" id="PQ0-4O-nty"/>
                             </connections>
@@ -146,6 +146,8 @@
     </scenes>
     <resources>
         <image name="ICON-favorite" width="28" height="26"/>
+        <image name="ICON-search" width="22" height="23"/>
+        <image name="ICON-sort" width="21" height="23"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

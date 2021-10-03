@@ -22,10 +22,21 @@ enum AppConstants {
     enum Title {
         static let bookList = "Book List"
         static let searchBookList = "Search"
+        static let orderType = "Select Order Type"
+        static let cancel = "Cancel"
+        static let ok = "OK"
     }
-    enum StoryboardIdentifier {
+    enum Message {
+        static let orderType = "Please choose an order type"
+    }
+    enum NavigationIdentifier {
         static let bookListNavigationController = "BookListNavigationController"
         static let searchBookListNavigationController = "SearchBookListNavigationController"
+    }
+    
+    enum ViewControllerIdentifier {
+        static let bookListViewController = "BookListViewController"
+        static let searchBookListController = "SearchBookListViewController"
     }
     
     enum StoryboardName {
@@ -36,44 +47,5 @@ enum AppConstants {
         static let mini: CGFloat = 4.0
         static let small: CGFloat = 8.0
         static let medium: CGFloat = 16.0
-    }
-}
-
-
-enum TabType {
-    case bookList
-    case searchBookList
-    var title: String {
-        switch self {
-        case .bookList:
-            return AppConstants.Title.bookList
-        case .searchBookList:
-            return AppConstants.Title.searchBookList
-        }
-    }
-    var identifier: String {
-        switch self {
-        case .bookList:
-            return AppConstants.StoryboardIdentifier.bookListNavigationController
-        case .searchBookList:
-            return AppConstants.StoryboardIdentifier.searchBookListNavigationController
-        }
-        
-    }
-    var name: String {
-        switch self {
-        case .bookList:
-            return AppConstants.StoryboardName.bookList
-        case .searchBookList:
-            return AppConstants.StoryboardName.searchBookList
-        }
-    }
-    var viewController: UIViewController {
-        switch self {
-        case .bookList:
-            return BookListViewController.build()
-        case .searchBookList:
-            return SearchBookListViewController.build()
-        }
     }
 }

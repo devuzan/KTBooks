@@ -7,16 +7,6 @@
 
 import UIKit
 
-extension UINavigationController {
-    static func build(tabType: TabType) -> UINavigationController {
-        let sb = UIStoryboard(name: tabType.name, bundle: nil)
-        let navigationController = sb.instantiateViewController(identifier: tabType.identifier) as! UINavigationController
-        navigationController.tabBarItem.title = tabType.title
-        navigationController.viewControllers = [tabType.viewController]
-        return navigationController
-    }
-}
-
 /// TabBarController
 final class TabBarController: UITabBarController {
     // MARK: - Public Properties.
@@ -33,6 +23,7 @@ final class TabBarController: UITabBarController {
     }
 }
 
+// MARK: - Build
 extension TabBarController {
     static func build() -> TabBarController {
         return TabBarController()

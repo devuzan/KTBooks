@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// BookListItemViewModelProtocol 
 protocol BookListItemViewModelProtocol {
     var id: String? { get }
     var name: String? { get }
