@@ -103,8 +103,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3sx-sW-e5g">
-                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="LD7-W3-011"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="zqO-aq-Lcf"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="LD7-W3-011">
+                            <connections>
+                                <action selector="tappedFilterButton:" destination="Y6W-OH-hqX" id="gYy-Rd-1Iu"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="zqO-aq-Lcf">
+                            <connections>
+                                <action selector="tappedSearchButton:" destination="Y6W-OH-hqX" id="PQ0-4O-nty"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="Ub7-3a-3ir" id="3gv-7Y-ICx"/>

@@ -18,9 +18,11 @@ final class BookListItemViewModel: BookListItemViewModelProtocol {
     var artwork: URL? {
         model.artworkUrl100
     }
-    
     var releaseDate: String? {
         model.releaseDate
+    }
+    var artistName: String? {
+        model.artistName
     }
     // MARK: - Private Properties.
     private let model: BookListItemServiceResponse

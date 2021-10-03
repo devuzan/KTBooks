@@ -13,6 +13,7 @@ final class SearchBookListTableViewCell: UITableViewCell {
     @IBOutlet weak var bookImageView: UIImageView!
     @IBOutlet weak var bookTitleLabel: UILabel!
     @IBOutlet weak var bookReleaseLabel: UILabel!
+    @IBOutlet weak var bookArtistName: UILabel!
     // MARK: - Initializer Methods.
     override class func awakeFromNib() {
         super.awakeFromNib()
@@ -22,5 +23,6 @@ final class SearchBookListTableViewCell: UITableViewCell {
         bookTitleLabel.text = viewModel.name
         bookImageView.load(url: viewModel.artwork)
         bookReleaseLabel.text = viewModel.releaseDate
+        bookArtistName.text = viewModel.artistName
     }
 }

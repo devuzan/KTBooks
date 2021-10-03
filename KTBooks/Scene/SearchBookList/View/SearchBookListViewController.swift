@@ -16,6 +16,7 @@ final class SearchBookListViewController: UIViewController {
     private var viewModel: SearchBookListViewModelProtocol!
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
         viewModel.getBookList { error in
             guard let error = error else {
                 self.tableView.reloadOnMainThread()
@@ -23,6 +24,9 @@ final class SearchBookListViewController: UIViewController {
             }
             self.showAlert(title: AppConstants.Text.errorTitle, message: error.localizedDescription, okActionHandler: nil)
         }
+    }
+    private func setupTableView() {
+        tableView.tableFooterView = UIView()
     }
 }
 
@@ -70,6 +74,7 @@ extension SearchBookListViewController {
         let service = BookListService()
         let viewModel = SearchBookListViewModel(service: service)
         viewController.viewModel = viewModel
+        viewController.title = AppConstants.Title.searchBookList
         return viewController
     }
 }

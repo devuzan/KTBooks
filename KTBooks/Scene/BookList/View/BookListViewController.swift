@@ -10,6 +10,8 @@ import UIKit
 /// BookListViewController
 final class BookListViewController: UIViewController {
     // MARK: - Private Properties.
+    @IBOutlet weak var filter: UIBarButtonItem!
+    @IBOutlet weak var search: UIBarButtonItem!
     private var viewModel: BookListViewModelProtocol!
     // MARK: - Public Properties.
     @IBOutlet weak var collectionView: UICollectionView!
@@ -34,6 +36,13 @@ final class BookListViewController: UIViewController {
         layout.minimumLineSpacing = AppConstants.Padding.small
         layout.minimumInteritemSpacing = AppConstants.Padding.mini
         collectionView.setCollectionViewLayout(layout, animated: true   )
+    }
+    
+    @IBAction func tappedFilterButton(_ sender: UIBarButtonItem) {
+        print("Filter")
+    }
+    @IBAction func tappedSearchButton(_ sender: Any) {
+        self.tabBarController?.selectedIndex = 1
     }
 }
 
@@ -95,6 +104,7 @@ extension BookListViewController {
         let service = BookListService()
         let viewModel = BookListViewModel(service: service)
         viewController.viewModel = viewModel
+        viewController.title = AppConstants.Title.bookList
         return viewController
     }
 }

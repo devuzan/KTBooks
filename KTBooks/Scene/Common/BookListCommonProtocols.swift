@@ -12,5 +12,6 @@ protocol BookListItemViewModelProtocol {
     var name: String? { get }
     var artwork: URL? { get }
     var releaseDate: String? { get }
+    var artistName: String? { get }
     func getFavoriteImageName() -> String?
 }
