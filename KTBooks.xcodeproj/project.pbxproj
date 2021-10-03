@@ -25,8 +25,6 @@
 		BD65E4552703AAE50013C454 /* UIViewController+ShowAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65E4542703AAE50013C454 /* UIViewController+ShowAlert.swift */; };
 		BD65E4572703B0D80013C454 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65E4562703B0D80013C454 /* BookDetailViewController.swift */; };
 		BD65E4592703B0E80013C454 /* BookDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD65E4582703B0E80013C454 /* BookDetail.storyboard */; };
-		BD65E45B2703BBE00013C454 /* FavoriteBookList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD65E45A2703BBE00013C454 /* FavoriteBookList.storyboard */; };
-		BD65E45D2703BBF20013C454 /* FavoriteBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65E45C2703BBF20013C454 /* FavoriteBookListViewController.swift */; };
 		BD65E4602703BCF90013C454 /* SearchBookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65E45F2703BCF90013C454 /* SearchBookListViewController.swift */; };
 		BD65E4622703BD290013C454 /* SearchBookList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD65E4612703BD290013C454 /* SearchBookList.storyboard */; };
 		BD65E46427063B0D0013C454 /* UITableView+ReloadOnMainThread.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD65E46327063B0D0013C454 /* UITableView+ReloadOnMainThread.swift */; };
@@ -37,6 +35,8 @@
 		BD7D607E27065E8E00062610 /* SearchBookListProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D607D27065E8E00062610 /* SearchBookListProtocols.swift */; };
 		BD7D608027065EA400062610 /* SearchBookListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D607F27065EA400062610 /* SearchBookListViewModel.swift */; };
 		BD7D608227065FCF00062610 /* UIImageView+Load.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD7D608127065FCF00062610 /* UIImageView+Load.swift */; };
+		BDE67239270A347C00C34C82 /* BookListSortingType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE67238270A347C00C34C82 /* BookListSortingType.swift */; };
+		BDE6723B270A530D00C34C82 /* UserDefault+Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE6723A270A530D00C34C82 /* UserDefault+Favorite.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,8 +60,6 @@
 		BD65E4542703AAE50013C454 /* UIViewController+ShowAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+ShowAlert.swift"; sourceTree = "<group>"; };
 		BD65E4562703B0D80013C454 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		BD65E4582703B0E80013C454 /* BookDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookDetail.storyboard; sourceTree = "<group>"; };
-		BD65E45A2703BBE00013C454 /* FavoriteBookList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavoriteBookList.storyboard; sourceTree = "<group>"; };
-		BD65E45C2703BBF20013C454 /* FavoriteBookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteBookListViewController.swift; sourceTree = "<group>"; };
 		BD65E45F2703BCF90013C454 /* SearchBookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookListViewController.swift; sourceTree = "<group>"; };
 		BD65E4612703BD290013C454 /* SearchBookList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchBookList.storyboard; sourceTree = "<group>"; };
 		BD65E46327063B0D0013C454 /* UITableView+ReloadOnMainThread.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+ReloadOnMainThread.swift"; sourceTree = "<group>"; };
@@ -72,6 +70,8 @@
 		BD7D607D27065E8E00062610 /* SearchBookListProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookListProtocols.swift; sourceTree = "<group>"; };
 		BD7D607F27065EA400062610 /* SearchBookListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBookListViewModel.swift; sourceTree = "<group>"; };
 		BD7D608127065FCF00062610 /* UIImageView+Load.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Load.swift"; sourceTree = "<group>"; };
+		BDE67238270A347C00C34C82 /* BookListSortingType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListSortingType.swift; sourceTree = "<group>"; };
+		BDE6723A270A530D00C34C82 /* UserDefault+Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefault+Favorite.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,7 +139,6 @@
 				BD65E46527065B6B0013C454 /* Common */,
 				BD65E45E2703BCE20013C454 /* SearchBookList */,
 				BD26A5F1270270E200E74FED /* BookDetail */,
-				BD26A5DE2702390100E74FED /* FavoriteBookList */,
 				BD26A5DD270238F400E74FED /* BookList */,
 				BD26A5D9270238C900E74FED /* Tab */,
 			);
@@ -154,15 +153,6 @@
 				BD26A5E52702672E00E74FED /* ViewModel */,
 			);
 			path = BookList;
-			sourceTree = "<group>";
-		};
-		BD26A5DE2702390100E74FED /* FavoriteBookList */ = {
-			isa = PBXGroup;
-			children = (
-				BD65E45A2703BBE00013C454 /* FavoriteBookList.storyboard */,
-				BD65E45C2703BBF20013C454 /* FavoriteBookListViewController.swift */,
-			);
-			path = FavoriteBookList;
 			sourceTree = "<group>";
 		};
 		BD26A5E52702672E00E74FED /* ViewModel */ = {
@@ -189,6 +179,7 @@
 				BD65E44B2703A5740013C454 /* NetworkError.swift */,
 				BD26A5EA2702677600E74FED /* BookListProtocols.swift */,
 				BD65E4492703A5390013C454 /* BookListService.swift */,
+				BDE67238270A347C00C34C82 /* BookListSortingType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -214,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				BD65E4502703AA530013C454 /* UICollectionView+ReloadOnMainThread.swift */,
+				BDE6723A270A530D00C34C82 /* UserDefault+Favorite.swift */,
 				BD7D608127065FCF00062610 /* UIImageView+Load.swift */,
 				BD65E46327063B0D0013C454 /* UITableView+ReloadOnMainThread.swift */,
 				BD65E4542703AAE50013C454 /* UIViewController+ShowAlert.swift */,
@@ -327,7 +319,6 @@
 				BD26A5CD270237B100E74FED /* LaunchScreen.storyboard in Resources */,
 				BD65E4622703BD290013C454 /* SearchBookList.storyboard in Resources */,
 				BD26A5CA270237B100E74FED /* Assets.xcassets in Resources */,
-				BD65E45B2703BBE00013C454 /* FavoriteBookList.storyboard in Resources */,
 				BD65E4592703B0E80013C454 /* BookDetail.storyboard in Resources */,
 				BD26A5E227023A0700E74FED /* BookList.storyboard in Resources */,
 			);
@@ -349,7 +340,6 @@
 				BD65E4572703B0D80013C454 /* BookDetailViewController.swift in Sources */,
 				BD65E46427063B0D0013C454 /* UITableView+ReloadOnMainThread.swift in Sources */,
 				BD26A5EB2702677600E74FED /* BookListProtocols.swift in Sources */,
-				BD65E45D2703BBF20013C454 /* FavoriteBookListViewController.swift in Sources */,
 				BD65E44A2703A5390013C454 /* BookListService.swift in Sources */,
 				BD65E46C27065BDD0013C454 /* BookListCommonProtocols.swift in Sources */,
 				BD26A5C1270237B000E74FED /* AppDelegate.swift in Sources */,
@@ -362,6 +352,8 @@
 				BD65E4512703AA530013C454 /* UICollectionView+ReloadOnMainThread.swift in Sources */,
 				BD65E44C2703A5740013C454 /* NetworkError.swift in Sources */,
 				BD65E46727065B880013C454 /* BookListModel.swift in Sources */,
+				BDE67239270A347C00C34C82 /* BookListSortingType.swift in Sources */,
+				BDE6723B270A530D00C34C82 /* UserDefault+Favorite.swift in Sources */,
 				BD26A5D62702386D00E74FED /* AppContainer.swift in Sources */,
 				BD26A5E427023B9200E74FED /* BookListItemCell.swift in Sources */,
 			);

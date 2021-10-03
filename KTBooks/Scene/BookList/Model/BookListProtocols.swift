@@ -13,6 +13,7 @@ protocol BookListViewModelProtocol {
     func numberOfRowsInSecion(in section: Int) -> Int
     func itemViewModel(at indexPath: IndexPath) -> BookListItemViewModelProtocol?
     func getBookList(completion: @escaping (Error?) -> Void)
+    func sorting(type: BookListSortingType, completion: () -> Void)
 }
 
 protocol BookListServiceProtocol {

@@ -13,6 +13,7 @@ final class BookListItemCell: UICollectionViewCell {
         didSet {
             bookLabel.text = viewModel.name
             bookImageView.load(url: viewModel.artwork)
+            updateFavoriteButtonImage(imageName: viewModel.imageName)
         }
     }
     // MARK: - Public Properties.
@@ -26,13 +27,15 @@ final class BookListItemCell: UICollectionViewCell {
     /// Injection ViewModel
     func configure(viewModel: BookListItemViewModelProtocol) {
         self.viewModel = viewModel
-        if let imageName = viewModel.imageName {
-            bookFavoriteButton.setImage(UIImage(named: imageName), for: .normal)
-        }
     }
     @IBAction func tappedFavoriteButton(_ sender: Any) {
         let isFavorited = viewModel.isFavoritedBook()
         viewModel.updateFavoriteBook(isFavorited: !isFavorited)
-        bookFavoriteButton.setImage(UIImage(named: viewModel.imageName!), for: .normal)
+        updateFavoriteButtonImage(imageName: viewModel.imageName)
+    }
+    private func updateFavoriteButtonImage(imageName: String?) {
+        if let imageName = imageName {
+            bookFavoriteButton.setImage(UIImage(named: imageName), for: .normal)
+        }
     }
 }

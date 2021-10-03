@@ -35,11 +35,20 @@ final class BookListViewController: UIViewController {
         layout.scrollDirection = .vertical
         layout.minimumLineSpacing = AppConstants.Padding.small
         layout.minimumInteritemSpacing = AppConstants.Padding.mini
-        collectionView.setCollectionViewLayout(layout, animated: true   )
+        collectionView.setCollectionViewLayout(layout, animated: true)
     }
-    
     @IBAction func tappedFilterButton(_ sender: UIBarButtonItem) {
-        print("Filter")
+        presentAlert(types: BookListSortingType.allCases) { [weak self] action in
+            guard
+                let title = action.title,
+                let selectedType = BookListSortingType(title) else {
+                return
+            }
+            self?.viewModel.sorting(type: selectedType) { [weak self] in
+                self?.collectionView.reloadOnMainThread()
+                self?.collectionView.setContentOffset(.zero, animated: true)
+            }
+        }
     }
     @IBAction func tappedSearchButton(_ sender: Any) {
         self.tabBarController?.selectedIndex = 1

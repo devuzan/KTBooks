@@ -26,14 +26,10 @@ final class TabBarController: UITabBarController {
     var searchBookListNavigationController: UINavigationController {
         UINavigationController.build(tabType: .searchBookList)
     }
-    var favoriteBookListNavigationController: UINavigationController {
-        UINavigationController.build(tabType: .favoriteBookList)
-    }
-
     // MARK: - View LifeCyle
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewControllers = [bookListNavigationController, searchBookListNavigationController, favoriteBookListNavigationController]
+        viewControllers = [bookListNavigationController, searchBookListNavigationController]
     }
 }
 

@@ -18,4 +18,16 @@ extension UIViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    func presentAlert(types: [BookListSortingType], tapped: ((UIAlertAction) -> Void)?) {
+        let alertController = UIAlertController(title: "", message: "", preferredStyle: .actionSheet)
+        types.forEach { type in
+            let action = UIAlertAction(title: type.title, style: .default, handler: tapped)
+            alertController.addAction(action)
+        }
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alertController.addAction(cancelAction)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }

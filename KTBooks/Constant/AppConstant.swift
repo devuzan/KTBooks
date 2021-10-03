@@ -14,22 +14,23 @@ enum AppConstants {
     }
     enum Text {
         static let errorTitle = "Error!"
+        static let orderAll = "Tumu"
+        static let orderAsc = "Yeniden Eskiye"
+        static let orderDesc = "Eskiden Yeniye"
+        static let orderFavorited = "Favoriler"
     }
     enum Title {
         static let bookList = "Book List"
         static let searchBookList = "Search"
-        static let favoriteBookList = "Favorite List"
     }
     enum StoryboardIdentifier {
         static let bookListNavigationController = "BookListNavigationController"
         static let searchBookListNavigationController = "SearchBookListNavigationController"
-        static let favoriteBookListNavigationController = "FavoriteBookListNavigationController"
     }
     
     enum StoryboardName {
         static let bookList = "BookList"
         static let searchBookList = "SearchBookList"
-        static let favoriteBookList = "FavoriteBookList"
     }
     enum Padding {
         static let mini: CGFloat = 4.0
@@ -42,13 +43,10 @@ enum AppConstants {
 enum TabType {
     case bookList
     case searchBookList
-    case favoriteBookList
     var title: String {
         switch self {
         case .bookList:
             return AppConstants.Title.bookList
-        case .favoriteBookList:
-            return AppConstants.Title.favoriteBookList
         case .searchBookList:
             return AppConstants.Title.searchBookList
         }
@@ -57,8 +55,6 @@ enum TabType {
         switch self {
         case .bookList:
             return AppConstants.StoryboardIdentifier.bookListNavigationController
-        case .favoriteBookList:
-            return AppConstants.StoryboardIdentifier.favoriteBookListNavigationController
         case .searchBookList:
             return AppConstants.StoryboardIdentifier.searchBookListNavigationController
         }
@@ -68,8 +64,6 @@ enum TabType {
         switch self {
         case .bookList:
             return AppConstants.StoryboardName.bookList
-        case .favoriteBookList:
-            return AppConstants.StoryboardName.favoriteBookList
         case .searchBookList:
             return AppConstants.StoryboardName.searchBookList
         }
@@ -78,8 +72,6 @@ enum TabType {
         switch self {
         case .bookList:
             return BookListViewController.build()
-        case .favoriteBookList:
-            return FavoriteBookListViewController.build()
         case .searchBookList:
             return SearchBookListViewController.build()
         }
